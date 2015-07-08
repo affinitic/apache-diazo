@@ -16,7 +16,7 @@ RUN ./configure
 RUN make
 RUN make install
 WORKDIR /tmp
-RUN rm -rf mod-transform-html-xslt-2p2
+RUN rm -rf mod-transform-html-xslt-2p2*
 
 # Load mod_transform globally
 RUN echo "LoadModule transform_module /usr/lib/apache2/modules/mod_transform.so" >> /etc/apache2/apache2.conf
