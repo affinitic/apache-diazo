@@ -8,13 +8,9 @@ ENV APACHE_LOG_DIR /var/log/apache2
 
 # Install mod_transform
 WORKDIR /tmp
-RUN wget http://html-xslt.googlecode.com/files/mod-transform-html-xslt-2p2.tgz
-RUN tar xvzf mod-transform-html-xslt-2p2.tgz
+RUN wget http://html-xslt.googlecode.com/files/mod-transform-html-xslt-2p2.tgz && tar xvzf mod-transform-html-xslt-2p2.tgz
 WORKDIR /tmp/mod-transform-html-xslt-2p2
-RUN pwd
-RUN ./configure
-RUN make
-RUN make install
+RUN ./configure && make && make install
 WORKDIR /tmp
 RUN rm -rf mod-transform-html-xslt-2p2*
 
