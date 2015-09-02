@@ -1,6 +1,7 @@
 FROM phusion/baseimage:0.9.16
 
-RUN apt-get update && apt-get -y install \
+RUN apt-get update && \
+    apt-get -y install \
   wget \
   libxslt1-dev \
   apache2 \
